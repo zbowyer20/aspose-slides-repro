@@ -22,8 +22,8 @@ We have a number of endpoints which will:
 - Save the converted file in `pdfs`.
 
 The endpoints are named after the font used:
-`http://localhost:8080/pptx/consolas`
-`http://localhost:8080/pptx/wingdings`
+- `http://localhost:8080/pptx/consolas`
+- `http://localhost:8080/pptx/wingdings`
 
 We expect that both conversions should complete successfully and without substitutions, but the problems outlined above arise intermittently.
 
