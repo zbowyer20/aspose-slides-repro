@@ -34,6 +34,7 @@ public class AsposeDemoController {
   public String convertFileWithWingdings() throws IOException {
     copyFont("Wingdings");
     FontsLoader.loadExternalFonts(new String[]{"/fonts"});
+    //    FontsLoader.clearCache();
     return convert("Wingdings");
   }
 
@@ -41,6 +42,7 @@ public class AsposeDemoController {
   public String convertFileWithConsolas() throws IOException {
     copyFont("Consolas");
     FontsLoader.loadExternalFonts(new String[]{"/fonts"});
+    //    FontsLoader.clearCache();
     return convert("Consolas");
   }
 

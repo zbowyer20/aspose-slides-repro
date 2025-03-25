@@ -11,8 +11,7 @@ We containerise the application. This is necessary as Aspose uses a number of de
 
 From the root:
 - `mvn clean package`
-- `docker build -t aspose-font-substitution .`
-- `docker run -p 8080:8080 -v $(pwd)/pdfs:/pdfs -v $(pwd)/fonts:/fonts -v $(pwd)/fonts-external:/fonts-external -v $(pwd)/testFiles:/testFiles aspose-font-substitution`
+- `docker-compose up --build`
 
 We have a number of endpoints which will:
 - Fetch a pptx file
