@@ -1,11 +1,9 @@
 # Aspose Reproductions
 ## Font Substitution Issue
 ### Problem
-- Fonts are sometimes substituted for defaults even though the font is available on the system and has been loaded using `FontsLoader.loadExternalFonts`. This is at least partially related to the Aspose cache used for fonts. `FontsLoader.clearCache()` will sometimes fix the issue.
---- *Question*: Is this the only way to update the cache when the external font folder has been updated? No write expiry or TTL?
+- Fonts are sometimes substituted for defaults even though the font is available on the system and has been loaded using `FontsLoader.loadExternalFonts`. This is at least partially related to the Aspose cache used for fonts. `FontsLoader.clearCache()` will sometimes fix the issue. *Question*: Is this the only way to update the cache when the external font folder has been updated? No write expiry or TTL?
 - Sometimes even when using `FontsLoader.clearCache()` and ensuring all fonts are available, fonts are substituted. This is not reproducible in a predictable way, but seems to be related to the number of fonts in the cache and we have reproduced it when the cache contains 30+ fonts.
-- Sometimes in our warning messages we see that fonts are being substituted for themselves. For instance, `1 - Font will be substituted from Wingdings to {Wingdings,OpenSymbol}`.
---- Is this just confusion around the wording of the log message? Or is there a bug here? When Consolas is being substituted we don't see that in the bracket-enclosed list.
+- Sometimes in our warning messages we see that fonts are being substituted for themselves. For instance, `1 - Font will be substituted from Wingdings to {Wingdings,OpenSymbol}`. *Question*: Is this just confusion around the wording of the log message? Or is there a bug here? When Consolas is being substituted we don't see that in the bracket-enclosed list.
 - Sometimes including some fonts in the file triggers an error around casting from one Aspose type to another. This recurs until specific fonts are removed from the file, but later on the same files can be converted without issue. I noticed this happening with `Farisi`, `Baghdad` and `Mishafi` fonts.
 
 ### Running the Reproduction
