@@ -10,6 +10,7 @@
 We containerise the application. This is necessary as Aspose uses a number of default directories to fetch fonts from. These often contain system default fonts. This set of directories can't be configured. Therefore we need to containerise to control the runtime environment as much as possible. Without doing this, different systems might have a different set of fonts they can substitute with.
 
 From the root:
+- `mvn clean package`
 - `docker-compose up --build`
 
 We have a number of endpoints which will:
