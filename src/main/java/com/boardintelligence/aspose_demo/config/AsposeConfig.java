@@ -8,9 +8,6 @@ import java.io.IOException;
 
 @Configuration
 public class AsposeConfig {
-  @Value("${aspose.should-use-license}")
-  private boolean shouldUseLicense;
-
   @Value("${aspose.public-key}")
   private String publicKey;
 
@@ -19,19 +16,11 @@ public class AsposeConfig {
 
   @PostConstruct
   public void init() throws IOException {
-    if (shouldUseLicense) {
-      setupAsposeSlides();
-      setupAsposeCells();
-    }
+    setupAsposeWords();
   }
 
-  private void setupAsposeSlides() {
-    com.aspose.slides.Metered metered = new com.aspose.slides.Metered();
-    metered.setMeteredKey(publicKey, privateKey);
-  }
-
-  private void setupAsposeCells() {
-    com.aspose.cells.Metered metered = new com.aspose.cells.Metered();
+  private void setupAsposeWords() {
+    com.aspose.words.Metered metered = new com.aspose.words.Metered();
     metered.setMeteredKey(publicKey, privateKey);
   }
 

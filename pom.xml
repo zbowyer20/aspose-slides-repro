@@ -53,14 +53,9 @@
 
 		<dependency>
 			<groupId>com.aspose</groupId>
-			<artifactId>aspose-slides</artifactId>
-			<version>25.2</version>
-			<classifier>jdk16</classifier>
-		</dependency>
-		<dependency>
-			<groupId>com.aspose</groupId>
-			<artifactId>aspose-cells</artifactId>
-			<version>25.1</version>
+			<artifactId>aspose-words</artifactId>
+			<version>25.4</version>
+			<classifier>jdk17</classifier>
 		</dependency>
 		<dependency>
 			<groupId>org.projectlombok</groupId>
