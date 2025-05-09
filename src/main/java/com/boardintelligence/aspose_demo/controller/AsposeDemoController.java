@@ -1,9 +1,6 @@
 package com.boardintelligence.aspose_demo.controller;
 
-import com.aspose.words.Document;
-import com.aspose.words.LoadOptions;
-import com.aspose.words.PdfSaveOptions;
-import com.aspose.words.SaveFormat;
+import com.aspose.words.*;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -78,6 +75,8 @@ public class AsposeDemoController {
   private PdfSaveOptions buildPdfSaveOptions() {
     PdfSaveOptions saveOptions = new PdfSaveOptions();
     saveOptions.setEmbedFullFonts(true);
+    saveOptions.setImageCompression(PdfImageCompression.JPEG);
+    saveOptions.setOptimizeOutput(true);
     saveOptions.setSaveFormat(SaveFormat.PDF);
 
     return saveOptions;
