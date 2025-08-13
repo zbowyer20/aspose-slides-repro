@@ -12,7 +12,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.io.ByteArrayInputStream;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.io.InputStream;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 @RestController
@@ -22,7 +26,9 @@ public class AsposeDemoController {
   @GetMapping("/pptx")
   public String pptx() {
     try {
-      byte[] pptx = Files.readAllBytes(Paths.get("src/main/resources/presentation-with-images.pptx"));
+      File file = getFile("presentation-with-images");
+      InputStream inputStream = new FileInputStream(file);
+      byte[] pptx = inputStream.readAllBytes();
       Presentation presentation = buildPresentation(pptx, new LoadOptions());
       try {
         String outputPath = savePresentationToFile(presentation);
@@ -36,6 +42,13 @@ public class AsposeDemoController {
       System.out.println("Error: " + e.getMessage());
       return "broken";
     }
+  }
+  private File getFile(String filename) throws FileNotFoundException {
+    File file = new File("/testFiles/" + filename + ".pptx");
+    if (!file.exists()) {
+      throw new FileNotFoundException("File not found.");
+    }
+    return file;
   }
 
   private Presentation buildPresentation(byte[] data, LoadOptions loadOptions) {
