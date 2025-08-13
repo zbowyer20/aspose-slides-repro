@@ -21,17 +21,11 @@ public class AsposeConfig {
   public void init() throws IOException {
     if (shouldUseLicense) {
       setupAsposeSlides();
-      setupAsposeCells();
     }
   }
 
   private void setupAsposeSlides() {
     com.aspose.slides.Metered metered = new com.aspose.slides.Metered();
-    metered.setMeteredKey(publicKey, privateKey);
-  }
-
-  private void setupAsposeCells() {
-    com.aspose.cells.Metered metered = new com.aspose.cells.Metered();
     metered.setMeteredKey(publicKey, privateKey);
   }
 

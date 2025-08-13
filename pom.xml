@@ -54,13 +54,13 @@
 		<dependency>
 			<groupId>com.aspose</groupId>
 			<artifactId>aspose-slides</artifactId>
-			<version>25.2</version>
+			<version>25.7</version>
 			<classifier>jdk16</classifier>
 		</dependency>
 		<dependency>
 			<groupId>com.aspose</groupId>
 			<artifactId>aspose-cells</artifactId>
-			<version>25.1</version>
+			<version>25.7</version>
 		</dependency>
 		<dependency>
 			<groupId>org.projectlombok</groupId>
